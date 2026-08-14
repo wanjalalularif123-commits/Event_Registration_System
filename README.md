@@ -4,13 +4,13 @@ BIT2083 Fundamental of Computational Thinking: Python — Final Project (40%)
 **SDG 11: Sustainable Cities and Communities**
 
 ## Group Members
-| Name | Student ID | Class Code | Program | NRIC/Passport |
-|------|-----------|------------|---------|----------------|
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+| Name | Student ID |Class code | Program |
+|------|-----------|------------|---------|
+|WAN JALALULARIF BIN WAN MOHD ANUAR |202307010067 |202605F0812 |BIT |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
 
 ## Project Structure
 
