@@ -1,5 +1,3 @@
-# Event_Registration_System
-
 # Community Event Registration System
 
 BIT2083 Fundamental of Computational Thinking: Python — Final Project (40%)
