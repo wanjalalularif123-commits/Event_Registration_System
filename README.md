@@ -7,10 +7,10 @@ BIT2083 Fundamental of Computational Thinking: Python — Final Project (40%)
 | Name | Student ID |Class code | Program |
 |------|-----------|------------|---------|
 |WAN JALALULARIF BIN WAN MOHD ANUAR |202307010067 |202605F0812 |BIT |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+|NUR NADHIRAH NAJWA BINTI RAZALI |202307010064 |202605F0812 |BIT |
+|KRISTY JADE LUTHER |202307010100 |202605F0812 |BCSSE|
+|THILAK A/L KAMALISH KUMAR |202309010104 | |BIT |
+|NURAIN BADRISYIA BINTI MOHD GHAZALI |202307010013 | |BCSSE|
 
 ## Project Structure
 
