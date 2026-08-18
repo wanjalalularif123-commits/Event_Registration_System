@@ -31,6 +31,14 @@ registrations = {
 ------------------------------------------------------------
 """
 
+# ANSI color codes for terminal text (shared across all modules)
+class Color:
+    BLUE = "\033[94m"
+    YELLOW = "\033[93m"
+    RED = "\033[91m"
+    RESET = "\033[0m"   # always reset after coloring, or it colors everything after too
+
+
 # Global in-memory storage (shared across the whole program)
 events = {}
 registrations = {}

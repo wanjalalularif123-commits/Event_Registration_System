@@ -5,7 +5,7 @@ Owned by: Member 4 (NURAIN BADRISYIA BINTI MOHD GHAZALI - 202307010013)
 Handles: searching events/participants and generating reports.
 """
 
-from data_store import events, registrations
+from data_store import events, registrations, Color
 
 
 def search_menu():
@@ -41,7 +41,7 @@ def search_participant():
             results.append((reg_id, reg))
 
     if not results:
-        print(f"No participants found matching '{keyword}'.")
+        print(f"{Color.RED}No participants found matching '{keyword}'.{Color.RESET}")
         return
 
     print(f"\nFound {len(results)} matching participant(s):")
@@ -82,7 +82,7 @@ def search_event():
                 matches[event_id] = event
 
     if not matches:
-        print(f"No events found matching '{keyword}'.")
+        print(f"{Color.RED}No events found matching '{keyword}'.{Color.RESET}")
         return
 
     print(f"\nFound {len(matches)} matching event(s):")
@@ -125,7 +125,7 @@ def generate_attendee_report():
     event_id = input("Enter event ID: ").strip()
 
     if event_id not in events:
-        print(f"Event ID '{event_id}' not found.")
+        print(f"{Color.RED}Event ID '{event_id}' not found.{Color.RESET}")
         return
 
     event = events[event_id]
@@ -210,8 +210,8 @@ def generate_summary_report():
     if most_popular_id:
         most_popular = events[most_popular_id]
         print(
-            f"\nMost Popular Event: {most_popular['name']} ({most_popular_id}) "
-            f"- {highest_ratio * 100:.1f}% full"
+            f"\n{Color.YELLOW}Most Popular Event: {most_popular['name']} ({most_popular_id}) "
+            f"- {highest_ratio * 100:.1f}% full{Color.RESET}"
         )
 
 
