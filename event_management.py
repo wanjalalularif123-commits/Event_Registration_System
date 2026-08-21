@@ -5,7 +5,7 @@ Owned by: Member 2 (Name - Student ID)
 Handles: creating, updating, and viewing events.
 """
 
-from data_store import events, generate_event_id
+from data_store import events, generate_event_id, Color
 
 
 def add_event():
@@ -54,7 +54,7 @@ def get_valid_capacity():
         raw = input("Capacity: ").strip()
         if raw.isdigit() and int(raw) > 0:
             return int(raw)
-        print("Capacity must be a positive whole number. Try again.")
+        print(f"{Color.RED}Capacity must be a positive whole number. Try again.{Color.RESET}")
 
 def view_events():
     print("\n--- All Events ---")
@@ -80,7 +80,7 @@ def update_event():
 
     event_id = input("\nEnter Event ID to update: ").strip().upper()
     if event_id not in events:
-        print(f"Event ID '{event_id}' not found.")
+        print(f"{Color.RED}Event ID '{event_id}' not found.{Color.RESET}")
         return
 
     print("Which field do you want to update?")

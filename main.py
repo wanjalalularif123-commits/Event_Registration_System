@@ -10,6 +10,7 @@ Run this file to start the application:
     python main.py
 """
 
+from data_store import Color
 from event_management import add_event, view_events, update_event
 from registration import register_participant, cancel_registration
 from reporting import search_menu, report_menu
@@ -17,10 +18,10 @@ from reporting import search_menu, report_menu
 
 def display_menu():
     """Display the main menu and return the user's choice."""
-    print("\n" + "=" * 50)
-    print(" COMMUNITY EVENT REGISTRATION SYSTEM")
-    print(" SDG 11: Sustainable Cities and Communities")
-    print("=" * 50)
+    print(f"\n{Color.BLUE}" + "=" * 50 + f"{Color.RESET}")
+    print(f"{Color.BLUE} COMMUNITY EVENT REGISTRATION SYSTEM{Color.RESET}")
+    print(f"{Color.BLUE} SDG 11: Sustainable Cities and Communities{Color.RESET}")
+    print(f"{Color.BLUE}" + "=" * 50 + f"{Color.RESET}")
     print("1. Add New Event")
     print("2. View All Events")
     print("3. Update Event")
@@ -29,7 +30,7 @@ def display_menu():
     print("6. Search Participant / Event")
     print("7. Generate Report")
     print("8. Exit")
-    print("=" * 50)
+    print(f"{Color.BLUE}" + "=" * 50 + f"{Color.RESET}")
 
     choice = input("Enter your choice (1-8): ").strip()
     return choice
@@ -66,7 +67,7 @@ def main():
             exit_program()
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 8.")
+            print(f"{Color.RED}Invalid choice. Please enter a number between 1 and 8.{Color.RESET}")
 
 
 if __name__ == "__main__":

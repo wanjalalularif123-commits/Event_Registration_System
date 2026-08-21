@@ -7,7 +7,7 @@ and basic input validation (e.g. IC number format).
 """
 
 import re
-from data_store import events, registrations, generate_registration_id
+from data_store import events, registrations, generate_registration_id, Color
 
 
 def register_participant():
@@ -17,7 +17,7 @@ def register_participant():
     print("\n---Register Participant---")
  
     if not events:
-        print("No event available yet. Ask an organiser to add one first.")
+        print(f"{Color.RED}No event available yet. Ask an organiser to add one first.{Color.RESET}")
         return
  
     # Show available events so the user can pick an ID
@@ -32,7 +32,7 @@ def register_participant():
     event_id = input("\nEnter Event ID to register for: ").strip().upper()
     event = events.get(event_id)
     if not event:
-        print(f"No event found with ID {event_id}.")
+        print(f"{Color.RED}No event found with ID {event_id}.{Color.RESET}")
         return
  
     # Name - must be non-empty and not purely numeric
@@ -82,7 +82,7 @@ def cancel_registration():
     registration = registrations.get(reg_id)
  
     if not registration:
-        print(f"No registration found with ID {reg_id}.")
+        print(f"{Color.RED}No registration found with ID {reg_id}.{Color.RESET}")
         return
  
     event_id = registration["event_id"]
