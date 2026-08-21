@@ -15,11 +15,11 @@ def register_participant():
     Register a participant for a chosen event.
     """
     print("\n---Register Participant---")
-
+ 
     if not events:
         print("No event available yet. Ask an organiser to add one first.")
         return
-
+ 
     # Show available events so the user can pick an ID
     print("Available events:")
     for event_id, event in events.items():
@@ -35,10 +35,10 @@ def register_participant():
         print(f"No event found with ID {event_id}.")
         return
  
-    # Name - must be non-empty
+    # Name - must be non-empty and not purely numeric
     participant_name = input("Participant name: ").strip()
-    while not participant_name:
-        participant_name = input("Name cannot be empty. Participant name: ").strip()
+    while not participant_name or participant_name.isdigit():
+        participant_name = input("Invalid name. Participant name: ").strip()
  
     # IC number - validated against Malaysian IC format
     ic_number = input("IC number (format 990101-14-5566): ").strip()
@@ -71,8 +71,8 @@ def register_participant():
  
     print(f"Registration complete. ID: {reg_id} | Status: {status}")
     return reg_id
-
-
+ 
+ 
 def cancel_registration():
     """
     Cancel an existing registration.
@@ -116,8 +116,8 @@ def _promote_next_waitlisted(event_id, event):
                 f"Promoted waitlisted participant '{reg['participant_name']}' to Confirmed."
             )
             return
-
-
+ 
+ 
 def validate_ic_format(ic_number):
     """
     Basic validation for Malaysian IC format (e.g. 990101-14-5566).
@@ -126,8 +126,9 @@ def validate_ic_format(ic_number):
     """
     pattern = r"^\d{6}-\d{2}-\d{4}$"
     return bool(re.match(pattern, ic_number))
-
-
+ 
+ 
 # Optional: allows this file to be tested on its own during development
 if __name__ == "__main__":
     register_participant()
+    
